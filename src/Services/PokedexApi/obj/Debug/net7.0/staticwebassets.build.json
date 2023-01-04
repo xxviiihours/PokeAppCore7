@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "a04KdcyiD7mGfVpi/W30wBzlDX5fPbpB/ws1TDoMWRY=",
+  "Source": "PokeAppCore7.PokedexApi",
+  "BasePath": "_content/PokeAppCore7.PokedexApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PokeAppCore7.PokedexApi.props" />
+</Project>

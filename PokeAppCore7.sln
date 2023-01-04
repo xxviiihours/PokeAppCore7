@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{33C82E43-7179-43F1-8BA7-1DAD60FD41B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{D2741EC6-8174-40E2-A49E-C9159AFA50B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7573E817-532D-4A81-8281-A2960ABBD715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokedexApi", "src\Services\PokedexApi\PokedexApi.csproj", "{4D7BC0B4-BA3C-4411-8396-249C095C1D3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2741EC6-8174-40E2-A49E-C9159AFA50B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2741EC6-8174-40E2-A49E-C9159AFA50B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2741EC6-8174-40E2-A49E-C9159AFA50B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2741EC6-8174-40E2-A49E-C9159AFA50B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7BC0B4-BA3C-4411-8396-249C095C1D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7BC0B4-BA3C-4411-8396-249C095C1D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7BC0B4-BA3C-4411-8396-249C095C1D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7BC0B4-BA3C-4411-8396-249C095C1D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2741EC6-8174-40E2-A49E-C9159AFA50B2} = {33C82E43-7179-43F1-8BA7-1DAD60FD41B6}
+		{7573E817-532D-4A81-8281-A2960ABBD715} = {33C82E43-7179-43F1-8BA7-1DAD60FD41B6}
+		{4D7BC0B4-BA3C-4411-8396-249C095C1D3D} = {7573E817-532D-4A81-8281-A2960ABBD715}
+	EndGlobalSection
+EndGlobal
