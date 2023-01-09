@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\PokeAppCore7.PokedexApi.props" />
-</Project>
