@@ -8,7 +8,7 @@ using PokeAppCore7.Application.Common.Exceptions;
 using PokeAppCore7.Application.Shared.DataObjects;
 using PokeAppCore7.PokedexApi.Infrastructure.Services;
 
-namespace PokeAppCore7.PokedexApi.Core.Ability.Commands
+namespace PokeAppCore7.PokedexApi.Core.Ability.Query
 {
     public class GetAbilityRequest : IRequest<AbilityInfo>
     {

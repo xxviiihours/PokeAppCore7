@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PokeAppCore7.PokedexApi.Core.Ability.Commands;
+using PokeAppCore7.PokedexApi.Core.Ability.Query;
 
 namespace PokeAppCore7.PokedexApi.Controllers
 {

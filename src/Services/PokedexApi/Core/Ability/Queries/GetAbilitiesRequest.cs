@@ -8,11 +8,11 @@ using PokeAppCore7.Application.Common.Models.Base;
 using PokeAppCore7.Application.Shared.DataObjects;
 using PokeAppCore7.PokedexApi.Infrastructure.Services;
 
-namespace PokeAppCore7.PokedexApi.Core.Ability.Commands
+namespace PokeAppCore7.PokedexApi.Core.Ability.Query
 {
     public class GetAbilitiesRequest : IRequest<PaginatedList<AbilityData>>
     {
-         public int Limit { get; set; }
+        public int Limit { get; set; }
         public int Offset { get; set; }
     }
 
