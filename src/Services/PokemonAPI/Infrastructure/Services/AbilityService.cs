@@ -6,25 +6,26 @@ using Newtonsoft.Json.Linq;
 using PokeAppCore7.Application.Common.Models.Base;
 using PokeAppCore7.Application.Shared.DataObjects;
 
-namespace PokeAppCore7.PokedexApi.Infrastructure.Services
+namespace PokeAppCore7.PokemonAPI.Infrastructure.Services
 {
-    public interface IPokemonService
+    public interface IAbilityService
     {
-        Task<PaginatedList<PokemonData>> GetPokemons(int offset, int limit);
-        Task<PokemonInfo> GetPokemonById(string id);
+        Task<PaginatedList<AbilityData>> GetAbilities(int offset, int limit);
+        Task<AbilityInfo> GetAbilityById(string id);
     }
-    public class PokemonService : IPokemonService
+
+    public class AbilityService : IAbilityService
     {
-        private const string GET_URL = "pokemon";
+        private const string GET_URL = "ability";
         private readonly IHttpClientFactory _clientFactory;
         private readonly PokemonAPISettings _settings;
-        public PokemonService(IHttpClientFactory clientFactory, IOptions<PokemonAPISettings> options)
+        public AbilityService(IHttpClientFactory clientFactory, IOptions<PokemonAPISettings> options)
         {
             _clientFactory = clientFactory;
             _settings = options.Value;
         }
 
-        public async Task<PaginatedList<PokemonData>> GetPokemons(int offset, int limit)
+        public async Task<PaginatedList<AbilityData>> GetAbilities(int offset, int limit)
         {
             var url = $"{_settings.Path}/{GET_URL}";
             if (limit > 0)
@@ -45,13 +46,13 @@ namespace PokeAppCore7.PokedexApi.Infrastructure.Services
                 var json = await response.Content.ReadAsStringAsync();
                 var jObject = JObject.Parse(json);
 
-                return jObject.ToObject<PaginatedList<PokemonData>>();
+                return jObject.ToObject<PaginatedList<AbilityData>>();
             }
 
             return default;
         }
 
-        public async Task<PokemonInfo> GetPokemonById(string id)
+        public async Task<AbilityInfo> GetAbilityById(string id)
         {
             var requestUrl = new Uri($"{_settings.Path}/{GET_URL}/{id}");
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, requestUrl);
@@ -64,7 +65,7 @@ namespace PokeAppCore7.PokedexApi.Infrastructure.Services
                 var json = await response.Content.ReadAsStringAsync();
                 var jObject = JObject.Parse(json);
 
-                return jObject.ToObject<PokemonInfo>();
+                return jObject.ToObject<AbilityInfo>();
             }
 
             return default;
