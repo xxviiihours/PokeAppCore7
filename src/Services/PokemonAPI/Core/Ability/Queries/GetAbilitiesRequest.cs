@@ -1,14 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using PokeAppCore7.Application.Common.Models.Base;
 using PokeAppCore7.Application.Shared.DataObjects;
-using PokeAppCore7.PokedexApi.Infrastructure.Services;
+using PokeAppCore7.PokemonAPI.Infrastructure.Services;
 
-namespace PokeAppCore7.PokedexApi.Core.Ability.Query
+namespace PokeAppCore7.PokemonAPI.Core.Ability.Queries
 {
     public class GetAbilitiesRequest : IRequest<PaginatedList<AbilityData>>
     {

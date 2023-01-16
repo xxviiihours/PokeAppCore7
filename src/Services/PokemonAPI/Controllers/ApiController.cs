@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using PokeAppCore7.Application.Common.Models.Base;
 
-namespace PokeAppCore7.PokedexApi.Controllers
+namespace PokeAppCore7.PokemonAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

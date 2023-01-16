@@ -1,17 +1,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using PokeAppCore7.Application.Common.Exceptions;
 using PokeAppCore7.Application.Shared.DataObjects;
-using PokeAppCore7.PokedexApi.Infrastructure.Services;
+using PokeAppCore7.PokemonAPI.Infrastructure.Services;
 
-namespace PokeAppCore7.PokedexApi.Core.Pokemon.Queries
+namespace PokeAppCore7.PokemonAPI.Core.Pokemon.Queries
 {
-    public class GetPokemonRequest : IRequest<PokemonInfo>
-    {
-        public string Id { get; set; }
-    }
-
+     public record GetPokemonRequest(string Id) : IRequest<PokemonInfo>;
     public class GetPokemonRequestHandler : IRequestHandler<GetPokemonRequest, PokemonInfo>
     {
         private readonly IPokemonService _pokemonService;

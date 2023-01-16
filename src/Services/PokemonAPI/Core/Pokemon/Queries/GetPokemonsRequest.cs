@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using MediatR;
 using PokeAppCore7.Application.Common.Models.Base;
 using PokeAppCore7.Application.Shared.DataObjects;
-using PokeAppCore7.PokedexApi.Infrastructure.Services;
+using PokeAppCore7.PokemonAPI.Infrastructure.Services;
 
-namespace PokeAppCore7.PokedexApi.Core.Pokemon.Queries
+namespace PokeAppCore7.PokemonAPI.Core.Pokemon.Queries
 {
     public class GetPokemonsRequest : IRequest<PaginatedList<PokemonData>>
     {

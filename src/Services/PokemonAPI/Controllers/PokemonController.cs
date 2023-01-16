@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PokeAppCore7.PokedexApi.Core.Pokemon.Queries;
+using PokeAppCore7.PokemonAPI.Core.Pokemon.Queries;
 
-namespace PokeAppCore7.PokedexApi.Controllers
+namespace PokeAppCore7.PokemonAPI.Controllers
 {
     public class PokemonController : ApiController
     {
@@ -18,7 +15,7 @@ namespace PokeAppCore7.PokedexApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
-            var result = await Mediator.Send(new GetPokemonRequest {Id = id});
+            var result = await Mediator.Send(new GetPokemonRequest(id));
 
             if(result == null){
                 return NotFound();
