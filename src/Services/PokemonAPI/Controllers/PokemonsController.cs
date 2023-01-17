@@ -1,13 +1,13 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PokeAppCore7.PokemonAPI.Core.Ability.Queries;
+using PokeAppCore7.PokemonAPI.Core.Pokemon.Queries;
 
 namespace PokeAppCore7.PokemonAPI.Controllers
 {
-    public class AbilityController : ApiController
+    public class PokemonsController : ApiController
     {
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] GetAbilitiesRequest request)
+        public async Task<IActionResult> GetAll([FromQuery] GetPokemonsRequest request)
         {
             return Ok(await Mediator.Send(request));
         }
@@ -15,7 +15,7 @@ namespace PokeAppCore7.PokemonAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
-            var result = await Mediator.Send(new GetAbilityRequest(id));
+            var result = await Mediator.Send(new GetPokemonRequest(id));
 
             if(result == null){
                 return NotFound();
