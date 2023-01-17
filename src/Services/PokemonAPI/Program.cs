@@ -12,17 +12,6 @@ builder.Services.AddHttpClient("gateway", c =>
 {
     c.BaseAddress = new Uri(builder.Configuration.GetSection("Gateway")["Url"]);
 });
-builder.Services.AddCors(setup =>
-{
-    setup.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-        policy.WithOrigins(builder.Configuration.GetSection("Gateway")["Url"]);
-        policy.AllowCredentials();
-    });
-});
-
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddControllers();
@@ -40,7 +29,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

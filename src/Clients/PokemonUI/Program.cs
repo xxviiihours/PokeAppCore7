@@ -24,14 +24,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// app.Map("/gateway", ApiGatewayProvider.UseOcelot);
+app.Map("/gateway", ApiGatewayProvider.UseOcelot);
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
     
 
-app.UseOcelot().Wait();
+// app.UseOcelot().Wait();
 
 app.MapFallbackToFile("index.html");
 
