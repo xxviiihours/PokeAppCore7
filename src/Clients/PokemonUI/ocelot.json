@@ -1,0 +1,55 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/abilities",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "UpstreamPathTemplate": "/api/abilities",
+      "UpstreamHttpMethod": ["Get"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/abilities/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5049
+        }
+      ],
+      "UpstreamPathTemplate": "/api/abilities/{id}",
+      "UpstreamHttpMethod": ["Get"]
+    },
+    {
+        "DownstreamPathTemplate": "/api/pokemons",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5049
+          }
+        ],
+        "UpstreamPathTemplate": "/api/pokemons",
+        "UpstreamHttpMethod": ["Get"]
+      },
+      {
+        "DownstreamPathTemplate": "/api/pokemons/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5049
+          }
+        ],
+        "UpstreamPathTemplate": "/api/pokemons/{id}",
+        "UpstreamHttpMethod": ["Get"]
+      }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44410"
+}
+}

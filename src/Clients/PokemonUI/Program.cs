@@ -1,7 +1,14 @@
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+using PokeAppCore7.PokemonUI.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 
+// Add services to the container.
+builder.Services.AddOcelot();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -17,10 +24,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+// app.Map("/gateway", ApiGatewayProvider.UseOcelot);
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
+    
+
+app.UseOcelot().Wait();
 
 app.MapFallbackToFile("index.html");
 
