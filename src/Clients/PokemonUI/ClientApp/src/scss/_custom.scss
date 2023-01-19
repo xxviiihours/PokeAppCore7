@@ -1,1 +1,9 @@
 // Here you can add other styles
+.custom-mouse-hover:hover {
+    color: #01447e;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+.cursor-default {
+    cursor: default;
+}
