@@ -1,6 +1,7 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
+  cil3d,
   cilBell,
   cilCalculator,
   cilChartPie,
@@ -25,6 +26,13 @@ const _nav = [
       color: 'info',
       text: 'NEW',
     },
+  },
+  {
+    component: CNavItem,
+    name: 'Pokemon',
+    to: '/pokemon',
+    icon: <CIcon icon={cil3d} customClassName="nav-icon" />
+    
   },
   {
     component: CNavItem,
