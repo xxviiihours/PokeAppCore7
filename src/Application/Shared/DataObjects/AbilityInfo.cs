@@ -35,7 +35,7 @@ namespace PokeAppCore7.Application.Shared.DataObjects
         public List<AbilityFlavorText> AbilityFlavorTexts { get; set; }
 
         [JsonProperty("pokemon")]
-        public List<AbilityPokemon> pokemon { get; set; }
+        public List<AbilityPokemon> pokemons { get; set; }
     }
 
     public class AbilityEffectChange
