@@ -2,7 +2,7 @@ import api from "./core/api";
 
 const ability_url = "gateway/api/abilities";
 
-export const getAbilities = async (offset = null, limit = null) => {
+const getAbilities = async (offset = null, limit = null) => {
 	let url = `${ability_url}?`;
 
 	if (offset != null) {
@@ -20,7 +20,7 @@ export const getAbilities = async (offset = null, limit = null) => {
 	};
 };
 
-export const getAbilityByQuery = async (query) => {
+const getAbilityByQuery = async (query) => {
 	const url = `${ability_url}/${query}`;
 
 	const response = await api.get(url);

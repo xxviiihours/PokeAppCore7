@@ -5,12 +5,12 @@ import { fetchAbilityByQuery } from "../../../reducers/features/abilitySlice";
 
 const AbilityDetailsContext = createContext(null);
 
-const useAbilityDetailsContext = () => useContext(AbilityDetailsContext);
+export const useAbilityDetailsContext = () => useContext(AbilityDetailsContext);
 
-export const AbilityDetailsWrapper = ({ children }) => {
+export default function AbilityDetailsWrapper({children}) {
 	const { id } = useParams();
 
-	const { ability } = useSelector((state) => state.ability);
+	const { loading, ability } = useSelector((state) => state.ability);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -18,13 +18,15 @@ export const AbilityDetailsWrapper = ({ children }) => {
 			dispatch(fetchAbilityByQuery(id));
 		}
 	},[ability]);
+
+	const handleViewPokemon = () => {
+		console.log("test")
+	}
   
-	const value = { ability };
+	const value = { loading, ability, handleViewPokemon };
 	return (
 		<AbilityDetailsContext.Provider value={value}>
 			{children(value)}
 		</AbilityDetailsContext.Provider>
 	);
-};
-
-export default AbilityDetailsWrapper;
+}

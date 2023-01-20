@@ -5,16 +5,16 @@ import { fetchABilities, fetchAbilityByQuery } from "../../reducers/features/abi
 
 const AbilityContext = createContext(null);
 
-const useAbilityContext = () => useContext(AbilityContext);
+export const useAbilityContext = () => useContext(AbilityContext);
 
-export const AbilityWrapper = ({ children }) => {
+export default function AbilityWrapper({ children }) {
 	const { loading, abilities } = useSelector((state) => state.ability);
 	const [itemCounter, setItemCounter] = useState(null);
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
 
-	const handleClick = (query) => {
+	const handleViewAbility = (query) => {
 		const path = generatePath("/ability/:id", { id: query });
 		navigate(path);
 		dispatch(fetchAbilityByQuery(query));
@@ -22,8 +22,7 @@ export const AbilityWrapper = ({ children }) => {
 
 	useEffect(() => {
 		if (itemCounter != null) {
-			console.log(itemCounter);
-			dispatch(fetchABilities(itemCounter, 10));
+			dispatch(fetchABilities(itemCounter, 20));
 		}
 		return () => {
 			if (abilities.count === 0) {
@@ -36,9 +35,7 @@ export const AbilityWrapper = ({ children }) => {
 		loading,
 		abilities,
 		setItemCounter,
-		handleClick,
+		handleViewAbility,
 	};
 	return <AbilityContext.Provider value={value}>{children(value)}</AbilityContext.Provider>;
-};
-
-export default AbilityWrapper;
+}
